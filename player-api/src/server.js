@@ -46,6 +46,40 @@ app.get('/', async (req, res) => {
     res.status(200).json(players);
 })
 
+app.get('/:id', async (req, res) => {
+    const id = req.params.id;
+
+    const data = await fs.readFile(dbLocation);
+    const players = JSON.parse(data);
+    const player = players.find((item) => item.id === id);
+
+    if(!player){
+        return res.status(404).json({message: 'Player not found.'})
+    }
+
+    res.status(200).json(player);
+})
+
+app.patch('/:id', async (req, res) => {
+    const id = req.params.id;
+
+    const data = await fs.readFile(dbLocation);
+    const players = JSON.parse(data);
+    const player = players.find((item) => item.id === id);
+
+    if(!player){
+        return res.status(404).json({message: 'Player not found'})
+    }
+
+    player.name = req.body.name || player.name;
+    player.country = req.body.country || player.country;
+    player.rank = req.body.rank || player.rank;
+
+    await fs.writeFile(dbLocation, JSON.stringify(players))
+
+    res.status(200).json(player)
+})
+
 
 
 app.get('/health', (_req, res) => {
