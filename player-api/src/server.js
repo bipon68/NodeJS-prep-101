@@ -24,19 +24,21 @@ app.use(express.json());
  */
 
 app.post('/', async(req, res) => {
+
     const player = {
         ...req.body,
         id: shortid.generate()
-    };
-    // res.status(201).json(player)
-    // const dbLocation = path.resolve('src', 'data.json')
-    const data = await fs.readFile(dbLocation)
-    const players = JSON.parse(data)
+    }
+    const data = await fs.readFile(dbLocation);
+    const players = JSON.parse(data);
     players.push(player);
 
-    await fs.writeFile(dbLocation, JSON.stringify(players));
-    res.status(201).json(player)
+    await fs.writeFile(dbLocation, JSON.stringify(players))
     console.log(players)
+    res.status(201).json(player)
+    
+
+    // res.status(201).json({message: "Post created successfully."})
 
 })
 
@@ -46,19 +48,19 @@ app.get('/', async (req, res) => {
     res.status(200).json(players);
 })
 
-app.get('/:id', async (req, res) => {
-    const id = req.params.id;
+// app.get('/:id', async (req, res) => {
+//     const id = req.params.id;
 
-    const data = await fs.readFile(dbLocation);
-    const players = JSON.parse(data);
-    const player = players.find((item) => item.id === id);
+//     const data = await fs.readFile(dbLocation);
+//     const players = JSON.parse(data);
+//     const player = players.find((item) => item.id === id);
 
-    if(!player){
-        return res.status(404).json({message: 'Player not found.'})
-    }
+//     if(!player){
+//         return res.status(404).json({message: 'Player not found.'})
+//     }
 
-    res.status(200).json(player);
-})
+//     res.status(200).json(player);
+// })
 
 app.patch('/:id', async (req, res) => {
     const id = req.params.id;
@@ -67,17 +69,13 @@ app.patch('/:id', async (req, res) => {
     const players = JSON.parse(data);
     const player = players.find((item) => item.id === id);
 
-    if(!player){
-        return res.status(404).json({message: 'Player not found'})
-    }
-
     player.name = req.body.name || player.name;
-    player.country = req.body.country || player.country;
-    player.rank = req.body.rank || player.rank;
 
-    await fs.writeFile(dbLocation, JSON.stringify(players))
+    await fs.writeFile(dbLocation, JSON.stringify(players));
 
     res.status(200).json(player)
+
+//   res.status(200).json({message: "Post updated successfully"})
 })
 
 
