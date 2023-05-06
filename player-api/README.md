@@ -3,7 +3,8 @@
 ### Project Creation Step by Step
 - npm init -y
 - npm i -D nodemon
-- run project: npm run dev
+- For ID - `npm i shortid`
+- run project: `npm run dev`
 
 **package.json file**
 
