@@ -11,3 +11,13 @@ Content-Type: application/json
     "country": "BD",
     "rank": 2
 }
+
+### 
+
+GET http://localhost:4000
+
+###
+GET http://localhost:4000/718-YjxY_
+
+###
+GET http://localhost:4000/JCSb2X3MM
