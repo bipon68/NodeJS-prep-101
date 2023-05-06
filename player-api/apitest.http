@@ -29,3 +29,33 @@ Content-Type: application/json
 {
     "name": "Rajib"
 }
+
+###
+PUT http://localhost:4000/5j610h1JM
+Content-Type: application/json
+
+{
+    "name": "Rounok Hasan",
+    "country": "BD",
+    "rank": 2
+}
+
+###
+PUT http://localhost:4000/TpL4O2zsK
+Content-Type: application/json
+
+{
+    "name": "Sajib",
+    "country": "BD",
+    "rank": 10
+}
+
+###
+DELETE http://localhost:4000/7_HzGHLWI
+Content-Type: application/json
+
+{
+    "name": "Barfy11",
+    "country": "BD",
+    "rank": 10
+}
