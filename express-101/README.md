@@ -13,7 +13,7 @@
 - [x] Request
 - [x] Response
 - [x] Middleware
-- [ ] Router
+- [x] Router
 - [ ] Error Handling
 - [ ] Static Files
 - [ ] Template Engines
