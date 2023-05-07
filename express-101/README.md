@@ -9,15 +9,18 @@
 
 **Topic**
 - [x] Understand Express Framework
-- [ ] Application
-- [ ] Request
-- [ ] Response
-- [ ] Middleware
+- [x] Application
+- [x] Request
+- [x] Response
+- [x] Middleware
 - [ ] Router
 - [ ] Error Handling
 - [ ] Static Files
 - [ ] Template Engines
 - [ ] Project using Express Generator
 - [ ] Round up
+
+**Reference**
+- [Express](https://expressjs.com/en/4x/api.html)
 
 
