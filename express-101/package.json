@@ -1,0 +1,22 @@
+{
+  "name": "express-101",
+  "version": "1.0.0",
+  "description": "### Project Creation Step by Step - npm init -y - npm i -D nodemon - run project: `npm run dev`",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": "v14.21.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
