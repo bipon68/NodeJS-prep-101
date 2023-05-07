@@ -14,7 +14,7 @@
 - [x] Response
 - [x] Middleware
 - [x] Router
-- [ ] Error Handling
+- [x] Error Handling
 - [ ] Static Files
 - [ ] Template Engines
 - [ ] Project using Express Generator
