@@ -31,6 +31,15 @@ app.use((error, req, res, next) => {
     res.status(500).json({message: 'Something went wrong.'})
 })
 
+/**
+ * This is a test function
+ * @param {string} name pass your name
+ * @returns {boolean}
+ */
+function testFunc(name){
+   
+}
+
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
     console.log(`Server is listening on PORT ${port}`);
