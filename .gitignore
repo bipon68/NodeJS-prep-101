@@ -11,6 +11,7 @@
 /node_modules
 /player-api/node_modules
 /restapi/node_modules
+/raffle-draw-project/node_modules
 
 # profiling files
 chrome-profiler-events*.json
@@ -56,3 +57,4 @@ primeng-theme/mirage/src/assets/sass/theme/designer
 
 restapi/package-lock.json
 player-api/package-lock.json
+raffle-draw-project/package-lock.json
