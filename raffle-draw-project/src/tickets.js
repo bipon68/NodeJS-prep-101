@@ -6,7 +6,11 @@ const tickets = Symbol('tickets')
 class TicketCollection{
 
     constructor(){
-        this[tickets] = [];
+
+       (async function(){
+        this[tickets] = await readFile();
+        console.log('data', this[tickets])
+       }).bind(this);
     }
 
     /**
@@ -19,6 +23,7 @@ class TicketCollection{
     create(username, price){
         const ticket = new Ticket(username, price);
         this[tickets].push(ticket);
+        writeFile();
         return tickets;
     }
 
@@ -35,6 +40,7 @@ class TicketCollection{
             const ticket = this.create(username, price);
             result.push(ticket)
         }
+        writeFile(this[tickets])
         return result;
     }
 
@@ -87,7 +93,7 @@ class TicketCollection{
             ticket.username = ticketBody.username ?? ticket.username;
             ticket.price = ticketBody.price ?? ticket.price;
         }
-
+        writeFile(this[tickets])
         return ticket;
     }
 
@@ -107,6 +113,8 @@ udpateBulk(username, ticketBody){
          */
         (ticket) => this.updateById(ticket.id, ticketBody)
     )
+    writeFile(this[tickets]);
+    return updateTickets;
 }
 
 /**
@@ -125,6 +133,7 @@ udpateBulk(username, ticketBody){
             return false
         }else{
             this[tickets].slice(index, 1);
+            writeFile(this[tickets]);
             return true;
         }
     }
@@ -143,6 +152,7 @@ deleteBulk(username){
          */
         (ticket) => this.deleteById(ticket.id)
     )
+    writeFile(this[tickets])
     return deletedResult;
 }
 
