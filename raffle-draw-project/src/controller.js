@@ -42,3 +42,20 @@ exports.findByUsername = (req, res) => {
     const tickets = ticketCollection.findByUsername(username);
     res.status(200).json({items: tickets, total: tickets.length})
 }
+
+// update controller
+
+exports.updateById = (req, res) => {
+    const id = req.body.id;
+    const ticket = ticketCollection.updateById(id, req.body);
+    if(!ticket){
+        return res.status(404).json({message: '404 Not Found.'})
+    }
+    res.status(200).json(ticket);
+}
+
+exports.updateByUsername = (req, res) => {
+    const id = req.body.username;
+    const ticket = ticketCollection.updateById(username, req.body);
+    res.status(200).json({items: tickets, total: tickets.length})
+}
