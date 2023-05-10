@@ -144,6 +144,32 @@ deleteBulk(username){
     return deletedResult;
 }
 
+/**
+ * 
+ * @param {number} winnerCount 
+ * @returns {Ticket[]}
+ */
+draw(winnerCount){
+    const winnerIndexes = new Array(winnerCount);
+
+    let winnerIndex = 0;
+    while(winnerIndex < winnerCount){
+        let ticketIndex = Math.floor(Math.random() * this[tickets].length);
+        if(!winnerIndex.includes(ticketIndex)){
+            winnerIndex[winnerIndex++] = ticketIndex;
+            continue;
+        }
+    }
+    const winners = winnerIndex.map(
+        /**
+         * 
+         * @param {number} index 
+         * @returns 
+         */
+        (index) => this[tickets][index]
+    )
+    return winners;
+}
 
 }
 
