@@ -175,6 +175,7 @@ draw(winnerCount){
 
 
 
-const collection = new TicketCollection()
+const collection = new TicketCollection();
+module.exports = collection;
 
 
