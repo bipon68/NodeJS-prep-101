@@ -1,4 +1,4 @@
-const shortid = requir('shortid');
+const shortid = require('shortid');
 
 class Ticket{
 /**

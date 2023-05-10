@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {sellBulkTicket, sellSingleTicket, findAll, findById, findByUsername, updateById, updateByUsername, deleteById, deleteByUsername} = require('./controller')
+const {sellBulkTicket, sellSingleTicket, findAll, findById, findByUsername, updateById, updateByUsername, deleteById, deleteByUsername, drawWinners} = require('./controller')
 
 // router.get('/t/:id');
 // router.put('/t/:id');
@@ -13,7 +13,7 @@ router.route('/u/:username').get(findByUsername).put(updateByUsername).delete(de
 // router.delete('/u/:username');
 
 router.post('/bulk', sellBulkTicket);
-router.get('/draw');
+router.get('/draw', drawWinners);
 
 // router.post('/');
 // router.get('/');

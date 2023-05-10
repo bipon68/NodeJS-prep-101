@@ -76,3 +76,10 @@ exports.deleteByUsername = (req, res) => {
     ticketCollection.deleteBulk(username);
     res.status(204).send();
 }
+
+// draw controller
+exports.drawWinners = (req, res) => {
+    const wc = req.params.wc ?? 3;
+    const winners = ticketCollection.draw(wc);
+    res.status(200).json(winners)
+}
