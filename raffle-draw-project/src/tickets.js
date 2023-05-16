@@ -9,8 +9,7 @@ class TicketCollection{
 
        (async function(){
         this[tickets] = await readFile();
-        console.log('data', this[tickets])
-       }).bind(this);
+       }.call(this));
     }
 
     /**
@@ -24,7 +23,7 @@ class TicketCollection{
         const ticket = new Ticket(username, price);
         this[tickets].push(ticket);
         writeFile();
-        return tickets;
+        return ticket;
     }
 
     /**

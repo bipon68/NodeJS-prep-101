@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const shortid  = require('shortid')
 const fs = require('fs/promises');
 const path = require('path');
-const dbLocation = path.resolve('src', 'data.json')
+// const dbLocation = path.resolve('src', 'data.json')
 
 const app = express();
 
